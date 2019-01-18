@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index Page renders correctly 1`] = `
+<h1
+  className="indexPage"
+>
+  こんにちは世界！
+</h1>
+`;
