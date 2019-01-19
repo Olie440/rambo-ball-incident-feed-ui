@@ -7,10 +7,10 @@ exports[`<Incident /> renders the correct HTML 1`] = `
   <div
     className="timestamp"
   >
-    15:18:02
+    15:34:53
   </div>
   <div>
-    GOAL_HOME
+    GOAL_MISSED_AWAY
   </div>
 </div>
 `;

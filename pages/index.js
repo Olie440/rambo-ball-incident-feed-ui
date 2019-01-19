@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import styles from '~/styles/index.scss';
 import getGameData from '~/redux/actions/get-game-data';
-import Incident from '~/components/incident/incident.component.js';
+import Incident from '~/components/incident/incident.component';
+import PaginatedList from '~/components/paginated-list/paginated-list.component';
 
 export class IndexPage extends Component {
 
@@ -19,13 +20,19 @@ export class IndexPage extends Component {
     }
 
     render() {
-        const incidents = this.props.game.incidents.map(
-            (props) => <Incident {...props} key={props.id} />
-        );
+        const listClassNames = {
+            controls: {
+                container: styles.pageControls
+            } 
+        };
 
         return (
             <div className={styles.indexPage}>
-                { incidents }
+                <PaginatedList 
+                    classNames={listClassNames}
+                    component={Incident} 
+                    data={this.props.game.incidents} 
+                    pageSize={4} />
             </div>
         );
     }

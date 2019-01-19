@@ -4,17 +4,50 @@ exports[`Index Page renders correctly 1`] = `
 <div
   className="indexPage"
 >
-  <Incident
-    id="3896af84-1886-48e3-b396-c5b1592151b1"
-    key="3896af84-1886-48e3-b396-c5b1592151b1"
-    timestamp={1547824682739}
-    type="GOAL_HOME"
-  />
-  <Incident
-    id="b72a9ebd-721c-49fa-aaef-45ea710ec87d"
-    key="b72a9ebd-721c-49fa-aaef-45ea710ec87d"
-    timestamp={1547824682739}
-    type="KICK_OFF"
+  <PaginatedList
+    classNames={
+      Object {
+        "controls": Object {
+          "container": "pageControls",
+        },
+      }
+    }
+    component={[Function]}
+    data={
+      Array [
+        Object {
+          "id": "203d7268-1d13-49ac-a879-52bd6d071d8a",
+          "timestamp": 1547825693,
+          "type": "GOAL_MISSED_AWAY",
+        },
+        Object {
+          "id": "a87d40a1-8027-444c-82ba-7f07cdb85081",
+          "timestamp": 1547825691,
+          "type": "GOAL_ATTEMPT_AWAY",
+        },
+        Object {
+          "id": "683fd087-8f90-41e8-a85d-e53a4be9c128",
+          "timestamp": 1547825069,
+          "type": "AWAY_POSSESSION",
+        },
+        Object {
+          "id": "3896af84-1886-48e3-b396-c5b1592151b1",
+          "timestamp": 1547825062,
+          "type": "GOAL_SCORED_HOME",
+        },
+        Object {
+          "id": "41e418c9-d9e0-4ff8-b857-fb6db5d5adc5",
+          "timestamp": 1547824982,
+          "type": "HOME_POSSESSION",
+        },
+        Object {
+          "id": "b72a9ebd-721c-49fa-aaef-45ea710ec87d",
+          "timestamp": 1547824682,
+          "type": "KICK_OFF",
+        },
+      ]
+    }
+    pageSize={4}
   />
 </div>
 `;
