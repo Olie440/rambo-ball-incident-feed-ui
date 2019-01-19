@@ -2,8 +2,12 @@ import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
 
-const reducer = (state, action) => ({ ...state, ...action});
+import reducers from './reducers';
 
 export function initializeStore(initialState) {
-    return createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)))
+    const middleware = composeWithDevTools(
+        applyMiddleware(thunkMiddleware)
+    );
+
+    return createStore(reducers, initialState, middleware)
 }
