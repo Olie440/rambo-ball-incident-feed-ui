@@ -19,10 +19,13 @@ export class IndexPage extends Component {
     }
 
     render() {
-        const { incidents = [] } = this.props.game;
+        const incidents = this.props.game.incidents.map(
+            (props) => <Incident {...props} key={props.id} />
+        );
+
         return (
             <div className={styles.indexPage}>
-                { incidents.map((props) => <Incident {...props} key={props.id} />) }
+                { incidents }
             </div>
         );
     }
