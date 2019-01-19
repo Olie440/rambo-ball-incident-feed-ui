@@ -1,5 +1,6 @@
 import React from 'react'
 import { initializeStore } from './store'
+import getConfig from 'next/config';
 
 /*
     This file isn't normally needed for redux but because of NextJS
@@ -27,9 +28,13 @@ function getOrCreateStore(initialState) {
 export default (App) => {
     return class AppWithRedux extends React.Component {
         static async getInitialProps(appContext) {
+            const { publicRuntimeConfig } = getConfig()
+
             // Get or Create the store with `undefined` as initialState
             // This allows you to set a custom default initialState
-            const reduxStore = getOrCreateStore()
+            const reduxStore = getOrCreateStore({ 
+                environment: publicRuntimeConfig
+            })
 
             // Provide the store to getInitialProps of pages
             appContext.ctx.reduxStore = reduxStore

@@ -17,4 +17,9 @@ module.exports = withSass({
         config.module.rules.push(eslintRule);
         return config;
     },
+    publicRuntimeConfig: {
+        endpoints: {
+            gameData: process.env.GAME_DATA_ENDPOINT || 'http://localhost:4000'
+        }
+    }
 });

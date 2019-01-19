@@ -8,5 +8,5 @@ export function getGameData(environment, id = '') {
 
     return axios
         .get(`${environment.endpoints.gameData}/games/${id}`)
-        .then((response) => response.data);
+        .then((response) => response.data)
 }
