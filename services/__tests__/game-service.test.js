@@ -1,16 +1,21 @@
 import axios from 'axios';
 
 import { getGameData } from '../game-service';
-import mockEnvironment from '~/__mocks__/mock-environment';
-import mockGame  from '~/__mocks__/mock-game';
+import MockEnvironment from '~/__mocks__/mock-environment';
+import MockGame  from '~/__mocks__/mock-game';
 
 jest.mock('axios');
 
 describe('getGameData', () => {
+    let mockGame, mockEnvironment;
+
     beforeEach(() => {
+        mockGame = MockGame();
+        mockEnvironment = MockEnvironment();
+
         axios.get.mockReset();
         axios.get.mockResolvedValue({
-            data: mockGame()
+            data: mockGame
         });
     });
 
@@ -20,12 +25,12 @@ describe('getGameData', () => {
     });
 
     it('makes a request to the correct address', async () => {
-        await getGameData(mockEnvironment(), 'mock-id');
+        await getGameData(mockEnvironment, 'mock-id');
         expect(axios.get).toHaveBeenCalledWith('http://mock-game-data/games/mock-id');
     });
 
     it('returns the game data', async () => {
-        const gameData = await getGameData(mockEnvironment(), 'mock-id');
-        expect(gameData).toEqual(mockGame());
+        const gameData = await getGameData(mockEnvironment, 'mock-id');
+        expect(gameData).toEqual(mockGame);
     });
 });

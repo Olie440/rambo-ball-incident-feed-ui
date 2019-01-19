@@ -28,6 +28,8 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
     "babel-plugin-root-import": "^6.1.0"
   },
   "scripts": {
@@ -35,7 +37,7 @@
     "build": "next build",
     "start": "next start",
     "test": "jest --watch",
-    "mock-server": "node mock-server/index.js"
+    "mock-server": "babel-node mock-server/index.js"
   },
   "repository": {
     "type": "git",

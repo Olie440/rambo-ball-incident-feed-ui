@@ -1,10 +1,10 @@
-import mockEnvironment from './mock-environment';
-import mockGame from './mock-game';
+import MockEnvironment from './mock-environment';
+import MockGame from './mock-game';
 
 export default function() {
     const mockState = {
-        environment: mockEnvironment(),
-        game: mockGame(),
+        environment: MockEnvironment(),
+        game: MockGame(),
     };
     
     return {
