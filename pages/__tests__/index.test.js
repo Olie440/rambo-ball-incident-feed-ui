@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { IndexPage } from '../pages/index.js';
+import { IndexPage } from '../index.js';
 import MockRedux from '~/__mocks__/mock-redux';
 import getGameData from '~/redux/actions/get-game-data';
 
-jest.mock('../redux/actions/get-game-data');
+jest.mock('../../redux/actions/get-game-data');
 
 describe('Index Page', () => {
     let mockRedux;
