@@ -27,20 +27,34 @@ describe('PaginatedList', () => {
         element = shallow(<PaginatedList {...props} />);
     });
 
-    it('renders the first page correctly', () => {
-        expect(element).toMatchSnapshot();
-    });
+    describe('rendering', () => {
+        test('first page', () => {
+            expect(element).toMatchSnapshot();
+        });
 
-    it('renders the last page correctly', () => {
-        element.setState({ currentPage: 2 });
-        expect(element).toMatchSnapshot();
-    });
+        test('last page', () => {
+            element.setState({ currentPage: 2 });
+            expect(element).toMatchSnapshot();
+        });
 
-    it('renders the correct HTML when no class names are provided', () => {
-        props.classNames = {};
-        element.setProps(props);
-        expect(element).toMatchSnapshot();
-    });
+        test('when no class names are provided', () => {
+            props.classNames = undefined;
+            element.setProps(props);
+            expect(element).toMatchSnapshot();
+        });
+
+        test('when pageSize is not provided', () => {
+            props.pageSize = undefined;
+            element.setProps(props);
+            expect(element).toMatchSnapshot();
+        });
+
+        test('when data is not provided', () => {
+            props.data = undefined;
+            element.setProps(props);
+            expect(element).toMatchSnapshot();
+        });
+    })
 
     it('increments the current page when the right button is clicked', () => {
         element.setState({ currentPage: 1 });

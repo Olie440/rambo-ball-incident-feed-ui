@@ -1,6 +1,125 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PaginatedList renders the correct HTML when no class names are provided 1`] = `
+exports[`PaginatedList rendering first page 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="controls_container"
+  >
+    <button
+      className="controls_leftButton"
+      disabled={true}
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <span
+      className="controls_pageText"
+    >
+      Page 
+      1
+       of 
+      2
+    </span>
+    <button
+      className="controls_rightButton"
+      disabled={false}
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </div>
+  <MockComponent
+    className="children"
+    id={1}
+    key="1"
+  />
+  <MockComponent
+    className="children"
+    id={2}
+    key="2"
+  />
+  <MockComponent
+    className="children"
+    id={3}
+    key="3"
+  />
+</div>
+`;
+
+exports[`PaginatedList rendering last page 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="controls_container"
+  >
+    <button
+      className="controls_leftButton"
+      disabled={false}
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <span
+      className="controls_pageText"
+    >
+      Page 
+      2
+       of 
+      2
+    </span>
+    <button
+      className="controls_rightButton"
+      disabled={true}
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </div>
+  <MockComponent
+    className="children"
+    id={4}
+    key="4"
+  />
+</div>
+`;
+
+exports[`PaginatedList rendering when data is not provided 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="controls_container"
+  >
+    <button
+      className="controls_leftButton"
+      disabled={true}
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <span
+      className="controls_pageText"
+    >
+      Page 
+      1
+       of 
+      1
+    </span>
+    <button
+      className="controls_rightButton"
+      disabled={true}
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </div>
+</div>
+`;
+
+exports[`PaginatedList rendering when no class names are provided 1`] = `
 <div>
   <div>
     <button
@@ -37,7 +156,7 @@ exports[`PaginatedList renders the correct HTML when no class names are provided
 </div>
 `;
 
-exports[`PaginatedList renders the first page correctly 1`] = `
+exports[`PaginatedList rendering when pageSize is not provided 1`] = `
 <div
   className="container"
 >
@@ -57,11 +176,11 @@ exports[`PaginatedList renders the first page correctly 1`] = `
       Page 
       1
        of 
-      2
+      1
     </span>
     <button
       className="controls_rightButton"
-      disabled={false}
+      disabled={true}
       onClick={[Function]}
     >
       &gt;
@@ -82,39 +201,6 @@ exports[`PaginatedList renders the first page correctly 1`] = `
     id={3}
     key="3"
   />
-</div>
-`;
-
-exports[`PaginatedList renders the last page correctly 1`] = `
-<div
-  className="container"
->
-  <div
-    className="controls_container"
-  >
-    <button
-      className="controls_leftButton"
-      disabled={false}
-      onClick={[Function]}
-    >
-      &lt;
-    </button>
-    <span
-      className="controls_pageText"
-    >
-      Page 
-      2
-       of 
-      2
-    </span>
-    <button
-      className="controls_rightButton"
-      disabled={true}
-      onClick={[Function]}
-    >
-      &gt;
-    </button>
-  </div>
   <MockComponent
     className="children"
     id={4}

@@ -1,6 +1,11 @@
 import React from 'react';
 
 export default class PaginatedList extends React.Component {
+    static defaultProps = {
+        data: [],
+        pageSize: 20
+    }
+    
     state = {
         currentPage: 1
     }
@@ -40,15 +45,15 @@ export default class PaginatedList extends React.Component {
 
     get currentPageData() {
         const { currentPage } = this.state;
-        const { pageSize = 20, data = [] } = this.props;
+        const { pageSize, data } = this.props;
         const pageStart = (currentPage - 1) * pageSize;
 
         return data.slice(pageStart, pageStart + pageSize);
     }
 
     get totalPages() {
-        const { pageSize = 20, data = [] } = this.props;
-        return Math.ceil(data.length / pageSize);
+        const { pageSize, data } = this.props;
+        return (Math.ceil(data.length / pageSize) || 1);
     }
 
     nextPage = () =>  {

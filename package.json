@@ -38,7 +38,8 @@
     "build": "next build",
     "start": "next start",
     "test": "jest --watch",
-    "mock-server": "babel-node mock-server/index.js"
+    "mock-server": "babel-node mock-server/index.js",
+    "coverage": "jest --coverage && open ./coverage/lcov-report/index.html"
   },
   "repository": {
     "type": "git",
