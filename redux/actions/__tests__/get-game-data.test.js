@@ -3,7 +3,7 @@ import MockRedux from '~/__mocks__/mock-redux';
 import MockGame from '~/__mocks__/mock-game';
 import { getGameData } from '~/services/game-service';
 
-jest.mock('../../../services/game-service.js');
+jest.mock('~/services/game-service.js');
 
 describe('getGameData Action', () => {
     let action, mockRedux, mockGame;
