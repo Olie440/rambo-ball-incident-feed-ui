@@ -27,7 +27,12 @@ describe('PaginatedList', () => {
         element = shallow(<PaginatedList {...props} />);
     });
 
-    it('renders the correct HTML', () => {
+    it('renders the first page correctly', () => {
+        expect(element).toMatchSnapshot();
+    });
+
+    it('renders the last page correctly', () => {
+        element.setState({ currentPage: 2 });
         expect(element).toMatchSnapshot();
     });
 
@@ -37,32 +42,15 @@ describe('PaginatedList', () => {
         expect(element).toMatchSnapshot();
     });
 
-    describe('when the right button is clicked', () => {
-        beforeEach(() => {
-            element.find('.controls_rightButton').simulate('click');
-        });
-
-        it('renders the next page', () => {
-            expect(element).toMatchSnapshot();
-        });
-
-        it('increments the current page in state', () => {
-            expect(element.state('currentPage')).toEqual(2);
-        });
+    it('increments the current page when the right button is clicked', () => {
+        element.setState({ currentPage: 1 });
+        element.find('.controls_rightButton').simulate('click');
+        expect(element.state('currentPage')).toEqual(2);
     });
 
-    describe('when the left button is clicked', () => {
-        beforeEach(() => {
-            element.setState({ currentPage: 2 });
-            element.find('.controls_leftButton').simulate('click');
-        });
-
-        it('renders the previous page', () => {
-            expect(element).toMatchSnapshot();
-        });
-
-        it('decrements the current page in state', () => {
-            expect(element.state('currentPage')).toEqual(1);
-        });
+    it('decrements the current page when the left button is clicked', () => {
+        element.setState({ currentPage: 2 });
+        element.find('.controls_leftButton').simulate('click');
+        expect(element.state('currentPage')).toEqual(1);
     });
-})
+});
