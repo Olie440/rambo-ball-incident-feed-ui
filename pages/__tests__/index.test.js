@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { IndexPage } from '../index.js';
+import { IndexPage, mapStateToProps } from '../index.js';
 import MockRedux from '~/__mocks__/mock-redux';
 import getGameData from '~/redux/actions/get-game-data';
 
@@ -15,8 +15,15 @@ describe('Index Page', () => {
     });
 
     it('renders correctly', () => {
-        const element = shallow(<IndexPage store={mockRedux.state}/>);
+        const element = shallow(<IndexPage game={mockRedux.state.game}/>);
         expect(element).toMatchSnapshot();
+    });
+
+    it('maps the redux state to props correctly', () => {
+        const result = mapStateToProps(mockRedux.state);
+        expect(result).toEqual({
+            game: mockRedux.state.game
+        });
     });
 
     describe('getInitalProps', () => {

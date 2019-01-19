@@ -1,9 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Index Page renders correctly 1`] = `
-<h1
+<div
   className="indexPage"
 >
-  こんにちは世界！
-</h1>
+  <Incident
+    id="3896af84-1886-48e3-b396-c5b1592151b1"
+    key="3896af84-1886-48e3-b396-c5b1592151b1"
+    timestamp={1547824682739}
+    type="GOAL_HOME"
+  />
+  <Incident
+    id="b72a9ebd-721c-49fa-aaef-45ea710ec87d"
+    key="b72a9ebd-721c-49fa-aaef-45ea710ec87d"
+    timestamp={1547824682739}
+    type="KICK_OFF"
+  />
+</div>
 `;

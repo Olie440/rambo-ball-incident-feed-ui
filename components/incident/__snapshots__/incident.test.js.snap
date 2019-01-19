@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Incident /> renders the correct HTML 1`] = `
+<div
+  className="incident"
+>
+  <div
+    className="timestamp"
+  >
+    15:18:02
+  </div>
+  <div>
+    GOAL_HOME
+  </div>
+</div>
+`;
