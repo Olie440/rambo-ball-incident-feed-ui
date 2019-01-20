@@ -4,9 +4,7 @@ exports[`<Incident /> renders the correct HTML 1`] = `
 <div
   className="incident"
 >
-  <div
-    className="timestamp"
-  >
+  <div>
     15:34:53
   </div>
   <div>

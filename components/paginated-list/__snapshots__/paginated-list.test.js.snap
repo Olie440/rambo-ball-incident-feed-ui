@@ -12,7 +12,9 @@ exports[`PaginatedList rendering first page 1`] = `
       disabled={true}
       onClick={[Function]}
     >
-      &lt;
+      <i
+        className="fas fa-caret-left"
+      />
     </button>
     <span
       className="controls_pageText"
@@ -27,9 +29,12 @@ exports[`PaginatedList rendering first page 1`] = `
       disabled={false}
       onClick={[Function]}
     >
-      &gt;
+      <i
+        className="fas fa-caret-right"
+      />
     </button>
   </div>
+  <MockComponent />
   <MockComponent
     className="children"
     id={1}
@@ -60,7 +65,9 @@ exports[`PaginatedList rendering last page 1`] = `
       disabled={false}
       onClick={[Function]}
     >
-      &lt;
+      <i
+        className="fas fa-caret-left"
+      />
     </button>
     <span
       className="controls_pageText"
@@ -75,9 +82,12 @@ exports[`PaginatedList rendering last page 1`] = `
       disabled={true}
       onClick={[Function]}
     >
-      &gt;
+      <i
+        className="fas fa-caret-right"
+      />
     </button>
   </div>
+  <MockComponent />
   <MockComponent
     className="children"
     id={4}
@@ -98,7 +108,9 @@ exports[`PaginatedList rendering when data is not provided 1`] = `
       disabled={true}
       onClick={[Function]}
     >
-      &lt;
+      <i
+        className="fas fa-caret-left"
+      />
     </button>
     <span
       className="controls_pageText"
@@ -113,9 +125,12 @@ exports[`PaginatedList rendering when data is not provided 1`] = `
       disabled={true}
       onClick={[Function]}
     >
-      &gt;
+      <i
+        className="fas fa-caret-right"
+      />
     </button>
   </div>
+  <MockComponent />
 </div>
 `;
 
@@ -126,7 +141,9 @@ exports[`PaginatedList rendering when no class names are provided 1`] = `
       disabled={true}
       onClick={[Function]}
     >
-      &lt;
+      <i
+        className="fas fa-caret-left"
+      />
     </button>
     <span>
       Page 
@@ -138,9 +155,12 @@ exports[`PaginatedList rendering when no class names are provided 1`] = `
       disabled={false}
       onClick={[Function]}
     >
-      &gt;
+      <i
+        className="fas fa-caret-right"
+      />
     </button>
   </div>
+  <MockComponent />
   <MockComponent
     id={1}
     key="1"
@@ -156,6 +176,36 @@ exports[`PaginatedList rendering when no class names are provided 1`] = `
 </div>
 `;
 
+exports[`PaginatedList rendering when no props are provided 1`] = `
+<div>
+  <div>
+    <button
+      disabled={true}
+      onClick={[Function]}
+    >
+      <i
+        className="fas fa-caret-left"
+      />
+    </button>
+    <span>
+      Page 
+      1
+       of 
+      1
+    </span>
+    <button
+      disabled={true}
+      onClick={[Function]}
+    >
+      <i
+        className="fas fa-caret-right"
+      />
+    </button>
+  </div>
+  <header />
+</div>
+`;
+
 exports[`PaginatedList rendering when pageSize is not provided 1`] = `
 <div
   className="container"
@@ -168,7 +218,9 @@ exports[`PaginatedList rendering when pageSize is not provided 1`] = `
       disabled={true}
       onClick={[Function]}
     >
-      &lt;
+      <i
+        className="fas fa-caret-left"
+      />
     </button>
     <span
       className="controls_pageText"
@@ -183,9 +235,12 @@ exports[`PaginatedList rendering when pageSize is not provided 1`] = `
       disabled={true}
       onClick={[Function]}
     >
-      &gt;
+      <i
+        className="fas fa-caret-right"
+      />
     </button>
   </div>
+  <MockComponent />
   <MockComponent
     className="children"
     id={1}

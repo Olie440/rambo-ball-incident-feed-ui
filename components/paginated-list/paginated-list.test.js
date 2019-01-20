@@ -10,6 +10,7 @@ describe('PaginatedList', () => {
     beforeEach(() => {
         props = {
             component: MockComponent,
+            header: MockComponent,
             pageSize: 3,
             data: [ { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 } ],
             classNames: {
@@ -34,6 +35,11 @@ describe('PaginatedList', () => {
 
         test('last page', () => {
             element.setState({ currentPage: 2 });
+            expect(element).toMatchSnapshot();
+        });
+
+        test('when no props are provided', () => {
+            element = shallow(<PaginatedList />);
             expect(element).toMatchSnapshot();
         });
 

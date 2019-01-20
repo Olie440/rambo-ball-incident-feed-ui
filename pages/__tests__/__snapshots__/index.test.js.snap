@@ -1,19 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Index Page renders correctly 1`] = `
-<div
+<section
   className="indexPage"
 >
-  <PaginatedList
-    classNames={
-      Object {
-        "controls": Object {
-          "container": "pageControls",
-        },
-      }
-    }
-    component={[Function]}
-    data={
+  <IncidentList
+    incidents={
       Array [
         Object {
           "id": "203d7268-1d13-49ac-a879-52bd6d071d8a",
@@ -49,5 +41,5 @@ exports[`Index Page renders correctly 1`] = `
     }
     pageSize={4}
   />
-</div>
+</section>
 `;

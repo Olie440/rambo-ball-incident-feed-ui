@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 
-import styles from '~/styles/index.scss';
 import getGameData from '~/redux/actions/get-game-data';
-import Incident from '~/components/incident/incident.component';
-import PaginatedList from '~/components/paginated-list/paginated-list.component';
+import styles from '~/styles/index.scss';
+
+import IncidentList from '~/components/incident-list/incident-list.component';
 
 export class IndexPage extends Component {
 
@@ -20,20 +20,12 @@ export class IndexPage extends Component {
     }
 
     render() {
-        const listClassNames = {
-            controls: {
-                container: styles.pageControls
-            } 
-        };
-
         return (
-            <div className={styles.indexPage}>
-                <PaginatedList 
-                    classNames={listClassNames}
-                    component={Incident} 
-                    data={this.props.game.incidents} 
-                    pageSize={4} />
-            </div>
+            <section className={styles.indexPage}>
+                <IncidentList
+                    pageSize={4}
+                    incidents={this.props.game.incidents} />
+            </section>
         );
     }
 }

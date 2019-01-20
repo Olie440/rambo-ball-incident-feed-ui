@@ -1,12 +1,7 @@
-$colour: #000000;
-
 .indexPage {
-    color: $colour;
-
-    .pageControls {
-        display: grid;
-        grid-template-columns: auto 100fr auto;
-        text-align: center;
-        width: 20em;
-    }
+    color: #000000;
+    display: grid;
+    justify-content: center;
+    margin-top: 5rem;
+    grid-template-columns: 30rem;
 }

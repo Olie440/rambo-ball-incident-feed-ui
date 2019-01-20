@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IncidentList /> <Header /> renders the correct HTML 1`] = `
+<header
+  className="header"
+>
+  <span>
+    Time
+  </span>
+  <span>
+    Incident Type
+  </span>
+</header>
+`;
+
+exports[`<IncidentList /> doesn't error when no props are passed in 1`] = `
+<PaginatedList
+  classNames={
+    Object {
+      "container": "incidentList",
+      "controls": Object {
+        "container": "pageControls",
+        "leftButton": "pageButton",
+        "rightButton": "pageButton",
+      },
+    }
+  }
+  component={[Function]}
+  data={Array []}
+  header={[Function]}
+  pageSize={20}
+/>
+`;
+
+exports[`<IncidentList /> passes the correct props to PaginatedList 1`] = `
+<PaginatedList
+  classNames={
+    Object {
+      "container": "incidentList",
+      "controls": Object {
+        "container": "pageControls",
+        "leftButton": "pageButton",
+        "rightButton": "pageButton",
+      },
+    }
+  }
+  component={[Function]}
+  data={
+    Array [
+      Object {
+        "id": 1,
+      },
+    ]
+  }
+  header={[Function]}
+  pageSize={25}
+/>
+`;

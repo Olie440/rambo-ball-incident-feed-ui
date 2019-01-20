@@ -3,15 +3,18 @@ import React from 'react';
 export default class PaginatedList extends React.Component {
     static defaultProps = {
         data: [],
-        pageSize: 20
+        pageSize: 20,
+        classNames: {},
+        header: () => null,
+        component: () => null
     }
-    
+
     state = {
         currentPage: 1
     }
 
     render() {
-        const { component: Component, classNames = {} } = this.props;
+        const { component: Component, header: Header, classNames } = this.props;
         const { container, children, controls = {} } = classNames;
         const { currentPage } = this.state;
 
@@ -26,7 +29,7 @@ export default class PaginatedList extends React.Component {
                         className={controls.leftButton}
                         disabled={(currentPage === 1)}
                         onClick={this.previousPage}>
-                        &lt;
+                        <i className="fas fa-caret-left" />
                     </button>
                     <span className={controls.pageText}>
                         Page {currentPage} of {this.totalPages}
@@ -35,9 +38,10 @@ export default class PaginatedList extends React.Component {
                         className={controls.rightButton}
                         disabled={(currentPage === this.totalPages)}
                         onClick={this.nextPage}>
-                        &gt;
+                        <i className="fas fa-caret-right" />
                     </button>
                 </div>
+                <Header />
                 {elements}
             </div>
         )
@@ -57,14 +61,14 @@ export default class PaginatedList extends React.Component {
     }
 
     nextPage = () =>  {
-        this.setState((state) => ({ 
+        this.setState((state) => ({
             currentPage: state.currentPage + 1
         }));
     }
 
     previousPage = () => {
-        this.setState((state) => ({ 
-            currentPage: state.currentPage - 1 
+        this.setState((state) => ({
+            currentPage: state.currentPage - 1
         }));
     }
 }
